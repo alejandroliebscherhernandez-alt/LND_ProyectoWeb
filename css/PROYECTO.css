@@ -219,3 +219,47 @@ h1, h2, h3 {
 .galeria-animada .section-title {
     display: inline-block;
 }
+.titulo {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+.titulo h1 {
+    font-size: 30rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+.bio-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.bio-seccion h1 {
+    font-size: 10rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.contenedor-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+}
+
+.info {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    background-color: #000000;
+    text-align: left;
+}
+
