@@ -220,12 +220,14 @@ h1, h2, h3 {
     display: inline-block;
 }
 .titulo {
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    overflow: hidden;
+    margin-bottom: -100px;
 }
 .titulo h1 {
     font-size: 30rem;
@@ -255,11 +257,15 @@ h1, h2, h3 {
 }
 
 .info {
-    flex: 1;
-    padding: 20px;
+    display: flex;
+    gap: 2rem;
+    padding-top: 0%;
+    padding-bottom: 10%;
     border: 1px solid #000;
     border-radius: 25px;
     background-color: #000000;
     text-align: left;
+    padding: 0 10%;
+    
 }
 
