@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const formulario = document.getElementById('form-contacto');
+    const formulario = document.getElementById('contact-form');
     const modal = document.getElementById('modal-siu');
-    const btnCerrar = document.getElementById('cerrar-siu');
+    const btnCerrar = document.getElementById('close-modal');
 
     if (formulario) {
         formulario.addEventListener('submit', function(e) {
             e.preventDefault();
+            
             if (modal) {
                 modal.style.display = 'flex';
             }
