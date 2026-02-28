@@ -4,34 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Cristiano, CR7, Futbol, Real Madrid, GOAT">
+    <meta name="keywords" content="Cristiano, CR7, Futbol, Real Madrid, GOAT, Trayectoria">
     <meta name="description"
         content="Sitio web oficial del proyecto sobre la trayectoria y palmarés de Cristiano Ronaldo.">
     <meta name="author" content="Alejandro Liebscher Hernandez">
-    <title>Proyecto Cristiano Ronaldo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/PROYECTO.css">
+    <title>Proyecto Cristiano Ronaldo | El GOAT</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/PROYECTO.css">
 </head>
 
 <body>
-   
+    <aside id="news-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>NOTICIAS CR7</h3>
+            <button id="close-news" class="close-btn">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Cargando"
+                data-fw-param="177086/"></script>
+        </div>
+    </aside>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
     <header>
-        <nav class="navbar">
-            <img src="img/CR7-logo.png" alt="Logo oficial de la marca CR7" class="logo-img">
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
-            <ul class="nav-menu">
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#career-section">TRAYECTORIA</a></li>
-                <li><a href="#stats-section">ESTADÍSTICAS</a></li>
-                <li><a href="#trophies-section">PALMARÉS</a></li>
-                <li><a href="#bio-section">BIO</a></li>
-                <li><a href="#contact-section">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <img src="img/CR7-logo.png" alt="Logo oficial de la marca CR7" class="logo-img">
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+
+        <ul class="nav-menu">
+            <li><a href="#">INICIO</a></li>
+            <li><a href="#career-section">TRAYECTORIA</a></li>
+            <li><a href="#stats-section">ESTADÍSTICAS</a></li>
+            <li><a href="#trophies-section">PALMARÉS</a></li>
+            <li><a href="#bio-section">BIO</a></li>
+            <li><a href="#contact-section">CONTACTO</a></li>
+            <li>
+                <button id="open-news" class="news-button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
 
     <main>
         <section class="hero">
@@ -322,10 +343,11 @@
                 </div>
                 <div class="input-group">
                     <p style="color: #cfb103; font-family: 'Oswald';">¿Es tu jugador favorito?</p>
+                    <br>
+                    <label for="si">Sí, es el goat</label>
                     <input type="radio" id="si" name="fav" value="si">
-                    <label for="si">Sí, es el GOAT</label><br>
+                    <label for="no">No, prefiero otro (no se de fútbol)</label>
                     <input type="radio" id="no" name="fav" value="no">
-                    <label for="no">No, prefiero otro</label>
                 </div>
 
                 <button type="submit" class="gold-button-siu">ENVIAR</button>
@@ -334,10 +356,11 @@
 
         <div id="modal-siu" class="modal-overlay">
             <div class="modal-content">
-                <h3 class="modal-title">¡RECIBIDO!</h3>
-                <p class="modal-text">Tu mensaje ha sido enviado correctamente. ¡SIUUU!</p>
-                <button id="close-modal" class="modal-button">CERRAR</button>
+                <h2 class="modal-title">¡SIUUU!</h2>
+                <p>Tu mensaje ha sido enviado.</p>
+                <button id="close-modal" class="modal-button">Cerrar</button>
             </div>
+        </div>
         </div>
     </main>
 
@@ -352,11 +375,5 @@
 
     <script src="javascript/PROYECTO.js"></script>
 </body>
-<!-- iniciar código de feedwind -->
-<script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Cargando"
-    data-fw-param="177086/"></script> <!-- fin código de feedwind -->
-<!-- iniciar código de feedwind -->
-<script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Cargando"
-    data-fw-param="177093/"></script> <!-- fin código de feedwind -->
 
 </html>

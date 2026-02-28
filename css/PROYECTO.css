@@ -27,7 +27,6 @@ h3,
 
 .container {
     padding: 80px 10%;
-    background-color: #111;
     position: relative;
 }
 
@@ -36,6 +35,23 @@ h3,
     border-left: 5px solid #cfb103;
     padding-left: 15px;
     margin-bottom: 30px;
+}
+
+.container,
+#career-section,
+#stats-section,
+#bio-section,
+#contact-section,
+.animated-gallery {
+    background-color: #111;
+    position: relative;
+    z-index: 1;
+}
+
+.bio {
+    background-color: #111;
+    position: relative;
+    z-index: 1;
 }
 
 /* 2. HEADER Y NAVBAR */
@@ -69,6 +85,7 @@ h3,
     text-decoration: none;
     color: black;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .nav-menu a:hover {
@@ -82,9 +99,6 @@ h3,
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
-    top: 0;
-    left: 0;
 }
 
 .video-container {
@@ -107,6 +121,75 @@ h3,
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
+/* --- ESTILO DEL SIDEBAR DE NOTICIAS --- */
+.news-button {
+    background: transparent;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    transition: 0.3s;
+}
+
+.news-button:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    left: auto;
+    width: 350px;
+    height: 100%;
+    background: #111;
+    z-index: 10001;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #cfb103;
+}
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    background: #cfb103;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: none;
+    z-index: 10000;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
 /* 4. SECCIÓN TRAYECTORIA */
 .stage {
     background: #222;
@@ -120,12 +203,6 @@ h3,
     color: #cfb103;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.95em;
-}
-
-em {
-    font-style: italic;
-    color: #eee;
 }
 
 /* 5. SECCIÓN ESTADÍSTICAS */
@@ -159,11 +236,6 @@ em {
 }
 
 /* 6. SECCIÓN PALMARÉS (GALERÍA ANIMADA) */
-.animated-gallery {
-    background: #111;
-    padding-bottom: 50px;
-}
-
 .header-centered {
     text-align: center;
 }
@@ -206,21 +278,17 @@ em {
 .trophy-card {
     width: 280px;
     margin: 0 10px;
-    background: #111;
+    background: #1a1a1a;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     border-bottom: 4px solid #cfb103;
     transition: all 0.4s ease;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
 }
 
 .trophy-card:hover {
-    transform: translateY(-15px) scale(1.05);
-    border-bottom: 4px solid #fff;
+    transform: translateY(-15px);
     box-shadow: 0 15px 30px rgba(207, 177, 3, 0.4);
     background: #222;
 }
@@ -230,21 +298,19 @@ em {
     height: 120px;
     object-fit: contain;
     margin-bottom: 15px;
+    transition: 0.3s;
 }
 
 .trophy-card:hover img {
-    transform: rotate(5deg) scale(1.1);
+    transform: scale(1.1);
     filter: drop-shadow(0 0 10px #cfb103);
-    transition: transform 0.3s ease;
 }
 
 /* 7. SECCIÓN BIO */
-
 .main-title h1 {
-    font-size: 19.5vw;
+    font-size: 15vw;
     text-align: center;
     line-height: 1;
-    background: #111;
 }
 
 .info-container {
@@ -252,7 +318,7 @@ em {
     gap: 2rem;
     padding: 50px 10%;
     justify-content: center;
-    background: #111;
+    flex-wrap: wrap;
 }
 
 .info-card {
@@ -281,21 +347,16 @@ em {
 .input-group label {
     display: block;
     color: #cfb103;
+    margin-bottom: 5px;
 }
 
-.input-group input:not([type="checkbox"]),
+.input-group input:not([type="radio"]),
 .input-group select {
     width: 100%;
     padding: 12px;
     background: #000;
     border: 1px solid #333;
     color: white;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .gold-button-siu {
@@ -334,22 +395,6 @@ em {
     border: 2px solid #cfb103;
     text-align: center;
     border-radius: 15px;
-    max-width: 90%;
-}
-
-.modal-title {
-    color: #cfb103;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.modal-button {
-    background: #cfb103;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 15px;
 }
 
 /* 10. FOOTER */
@@ -361,7 +406,7 @@ em {
 }
 
 .social-links {
-    margin-top: 15px;
+    margin: 15px 0;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -377,80 +422,62 @@ em {
     transform: scale(1.2);
 }
 
-.reference-link {
-    font-size: 0.9rem;
-    margin-top: 10px;
-    color: #888;
-}
+/* 11. MEDIA QUERIES (3 TAMAÑOS) - OPTIMIZADO */
 
-.reference-link a {
-    color: #cfb103;
-    text-decoration: underline;
-}
-
-.reference-link a:hover {
-    color: white;
-}
-
-/* 10. MEDIDAS */
-/* Tablets y Portátiles */
+/* TABLETS (1024px) */
 @media (max-width: 1024px) {
-    .info-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
     .info-card {
         width: 45%;
     }
 
     .main-title h1 {
-        font-size: 4.5rem;
+        font-size: 6rem;
     }
 }
-/* Móviles grandes y Tables verticales */
-    @media (max-width: 768px) {
 
-        nav ul {
-            flex-direction: column;
-            gap: 15px;
-            padding: 20px 0;
-        }
-
-        .info-card {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .main-title h1 {
-            font-size: 3.5rem;
-        }
-
-        .trophy-card {
-            min-width: 150px;
-        }
+/* MÓVILES GRANDES (768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 5%;
     }
 
+    .hero-overlay h1 {
+        font-size: 3.5rem;
+    }
 
-    @media (max-width: 480px) {
-        .menu-icon {
+    .nav-menu {
+        gap: 10px;
+    }
+
+    .stats-table {
+        font-size: 0.85rem;
+    }
+}
+
+/* MÓVILES PEQUEÑOS (480px) */
+@media (max-width: 480px) {
+    .menu-icon {
         display: block;
-        font-size: 1.5rem;
         color: black;
         cursor: pointer;
     }
+    .news-button {
+        color: black;
+        padding: 15px 0;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+}
 
     .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: #cfb103;
-        padding: 20px 0;
+        padding: 20px;
     }
 
     #menu-toggle:checked~.nav-menu {
@@ -458,37 +485,23 @@ em {
     }
 
     .hero-overlay h1 {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
 
-    .info-container {
-        flex-direction: column;
+    .info-card {
+        min-width: 100%;
     }
 
-        .main-title h1 {
-            font-size: 2.5rem;
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-        }
-
-        .footer {
-            padding: 20px 10px;
-            font-size: 0.8rem;
-        }
-
-
-        .reference-link {
-            font-size: 0.7rem;
-        }
-        .container {
-        padding: 40px 5%;
+    .cr7-form {
+        width: 100%;
+        padding: 15px;
     }
-    .hero-overlay h1 {
-        font-size: 2rem;
+
+    .container {
+        padding: 40px 15px;
     }
-    .trophy-card {
-        width: 220px;
+
+    .main-title h1 {
+        font-size: 15vw;
     }
-    }
+}
