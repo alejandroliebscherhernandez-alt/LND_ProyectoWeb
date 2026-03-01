@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
     <meta name="description" content="Sitio web oficial sobre la trayectoria de Cristiano Ronaldo.">
     <meta name="author" content="Alejandro Liebscher Hernandez">
     <title>Proyecto Cristiano Ronaldo | El GOAT</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/PROYECTO.css">
 </head>
+
 <body>
     <aside id="barra-noticias" class="barra-lateral">
         <div class="cabecera-lateral">
@@ -18,7 +21,8 @@
             <button id="boton-cerrar-noticias" class="boton-cerrar">&times;</button>
         </div>
         <div class="contenido-noticias">
-            <script src="https://feed.mikle.com/js/fw-loader.js" data-preloader-text="Cargando" data-fw-param="177086/"></script>
+            <script src="https://feed.mikle.com/js/fw-loader.js" data-preloader-text="Cargando"
+                data-fw-param="177086/"></script>
         </div>
     </aside>
     <div id="fondo-oscuro" class="fondo-oscuro-lateral"></div>
@@ -36,9 +40,13 @@
                 <li><a href="#biografia">BIO</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
                 <li>
-                    <button id="abrir-noticias" class="boton-noticias">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+                    <a href="curiosidades.html">
+                        + CURIOSIDADES
+                    </a>
+                </li>
+                <button id="abrir-noticias" class="boton-noticias">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
                 </li>
             </ul>
         </nav>
@@ -327,18 +335,18 @@
                     </select>
                 </div>
                 <div class="grupo-input">
-    <p class="pregunta-formulario">¿Es tu jugador favorito?</p>
-    <div class="opciones-radio">
-        <div class="opcion">
-            <input type="radio" id="si" name="fav" value="si">
-            <label for="si">Sí, es el GOAT</label>
-        </div>
-        <div class="opcion">
-            <input type="radio" id="no" name="fav" value="no">
-            <label for="no">No, prefiero otro (no sé de fútbol)</label>
-        </div>
-    </div>
-</div>
+                    <p class="pregunta-formulario">¿Es tu jugador favorito?</p>
+                    <div class="opciones-radio">
+                        <div class="opcion">
+                            <input type="radio" id="si" name="fav" value="si">
+                            <label for="si">Sí, es el GOAT</label>
+                        </div>
+                        <div class="opcion">
+                            <input type="radio" id="no" name="fav" value="no">
+                            <label for="no">No, prefiero otro (no sé de fútbol)</label>
+                        </div>
+                    </div>
+                </div>
 
                 <button type="submit" class="gold-button-siu">ENVIAR</button>
             </form>
@@ -364,4 +372,5 @@
 
     <script src="javascript/PROYECTO.js"></script>
 </body>
+
 </html>
