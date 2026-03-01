@@ -1,75 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Cristiano, CR7, Futbol, Real Madrid, GOAT, Trayectoria">
-    <meta name="description"
-        content="Sitio web oficial del proyecto sobre la trayectoria y palmarés de Cristiano Ronaldo.">
+    <meta name="description" content="Sitio web oficial sobre la trayectoria de Cristiano Ronaldo.">
     <meta name="author" content="Alejandro Liebscher Hernandez">
     <title>Proyecto Cristiano Ronaldo | El GOAT</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <link rel="stylesheet" href="css/PROYECTO.css">
 </head>
-
 <body>
-    <aside id="news-sidebar" class="sidebar">
-        <div class="sidebar-header">
+    <aside id="barra-noticias" class="barra-lateral">
+        <div class="cabecera-lateral">
             <h3>NOTICIAS CR7</h3>
-            <button id="close-news" class="close-btn">&times;</button>
+            <button id="boton-cerrar-noticias" class="boton-cerrar">&times;</button>
         </div>
-        <div class="sidebar-content">
-            <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Cargando"
-                data-fw-param="177086/"></script>
+        <div class="contenido-noticias">
+            <script src="https://feed.mikle.com/js/fw-loader.js" data-preloader-text="Cargando" data-fw-param="177086/"></script>
         </div>
     </aside>
-    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <div id="fondo-oscuro" class="fondo-oscuro-lateral"></div>
 
     <header>
-    <nav class="navbar">
-        <img src="img/CR7-logo.png" alt="Logo oficial de la marca CR7" class="logo-img">
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
-
-        <ul class="nav-menu">
-            <li><a href="#">INICIO</a></li>
-            <li><a href="#career-section">TRAYECTORIA</a></li>
-            <li><a href="#stats-section">ESTADÍSTICAS</a></li>
-            <li><a href="#trophies-section">PALMARÉS</a></li>
-            <li><a href="#bio-section">BIO</a></li>
-            <li><a href="#contact-section">CONTACTO</a></li>
-            <li>
-                <button id="open-news" class="news-button">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </li>
-        </ul>
-    </nav>
-</header>
+        <nav class="barra-navegacion">
+            <img src="img/CR7-logo.png" alt="Logo CR7" class="imagen-logo">
+            <input type="checkbox" id="menu-toggle" class="toggle-menu">
+            <label for="menu-toggle" class="icono-menu"><i class="fa-solid fa-bars"></i></label>
+            <ul class="menu-navegacion">
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#trayectoria">TRAYECTORIA</a></li>
+                <li><a href="#estadisticas">ESTADÍSTICAS</a></li>
+                <li><a href="#palmares">PALMARÉS</a></li>
+                <li><a href="#biografia">BIO</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li>
+                    <button id="abrir-noticias" class="boton-noticias">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section class="hero">
-            <div class="video-container">
+        <section class="inicio-video">
+            <div class="contenedor-video-fondo">
                 <video autoplay loop muted playsinline>
                     <source src="video/videocr7-highlights.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="hero-overlay">
+            <div class="capa-texto-inicio">
                 <h1>CRISTIANO RONALDO</h1>
                 <p><strong>EL MEJOR JUGADOR DEL MUNDO</strong></p>
             </div>
         </section>
 
-        <section id="career-section" class="container">
-            <h2 class="section-title">TRAYECTORIA</h2>
-            <article class="stage">
+        <section id="trayectoria" class="contenedor seccion-oscura">
+            <h2 class="titulo-seccion">TRAYECTORIA</h2>
+            <article class="etapa-carrera">
                 <h3>Inicios: Sporting de Lisboa</h3>
                 <p>Cristiano Ronaldo comenzó su camino en el fútbol en su Madeira natal, destacando rápidamente en el
                     Andorinha y el Nacional antes de dar el salto al Sporting de Lisboa con solo 12 años. Su debut
@@ -77,7 +67,7 @@
                     contra el Manchester United, lo que llevó a Sir Alex Ferguson a ficharlo de inmediato, iniciando así
                     su ascenso meteórico hacia la élite del fútbol mundial en la Premier League.</p>
             </article>
-            <article class="stage">
+            <article class="etapa-carrera">
                 <h3>Madurez: Real Madrid</h3>
                 <p>Su llegada al Real Madrid en 2009 marcó el inicio de una era sin precedentes en la historia del club
                     blanco, donde Cristiano se transformó en una máquina de anotar goles definitiva y un líder
@@ -86,7 +76,7 @@
                     todos los récords individuales posibles, consolidando su rivalidad histórica con Lionel Messi y
                     elevando el estándar de excelencia deportiva.</p>
             </article>
-            <article class="stage">
+            <article class="etapa-carrera">
                 <h3>La Leyenda Continúa</h3>
                 <p>Tras su exitoso paso por España, Ronaldo buscó nuevos desafíos en la Juventus de Turín, donde
                     continuó demostrando su vigencia al conquistar títulos de la Serie A y superar la cifra de los 700
@@ -97,10 +87,10 @@
             </article>
         </section>
 
-        <section id="stats-section" class="container">
-            <h2 class="section-title">ESTADÍSTICAS OFICIALES</h2>
-            <div class="table-wrapper">
-                <table class="stats-table">
+        <section id="estadisticas" class="contenedor seccion-oscura">
+            <h2 class="titulo-seccion">ESTADÍSTICAS OFICIALES</h2>
+            <div class="envoltorio-tabla">
+                <table class="tabla-stats">
                     <thead>
                         <tr>
                             <th>Club / Selección</th>
@@ -150,135 +140,132 @@
             </div>
         </section>
 
-        <section id="trophies-section" class="animated-gallery">
-            <div class="container header-centered">
-                <h2 class="section-title">PALMARÉS E HITOS</h2>
+        <section id="palmares" class="seccion-oscura contenedor">
+            <h2 class="titulo-seccion">PALMARÉS E HITOS</h2>
+            <div class="contenedor-video-trofeos">
+                <video autoplay loop muted playsinline class="video-trofeos">
+                    <source src="video/videocr7-trofeos.mp4" type="video/mp4">
+                </video>
             </div>
-            <div class="featured-video-container container">
-                <div class="video-inner-wrapper">
-                    <video autoplay loop muted playsinline class="video-trophies">
-                        <source src="video/videocr7-trofeos.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="slider-container">
-                <div class="slider-track">
-                    <figure class="trophy-card"><img src="img/champions.png" alt="Champions League">
+
+            <div class="carrusel-contenedor">
+                <div class="pista-carrusel">
+                    <figure class="tarjeta-trofeo"><img src="img/champions.png" alt="Champions League">
                         <figcaption>
                             <h3>Champions League</h3>
                             <p>5 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/balon-oro.png" alt="Balón de Oro">
+                    <figure class="tarjeta-trofeo"><img src="img/balon-oro.png" alt="Balón de Oro">
                         <figcaption>
                             <h3>Balón de Oro</h3>
                             <p>5 Trofeos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/eurocopa.png" alt="Eurocopa">
+                    <figure class="tarjeta-trofeo"><img src="img/eurocopa.png" alt="Eurocopa">
                         <figcaption>
                             <h3>Eurocopa</h3>
                             <p>1 Título</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/premier.png" alt="Premier League">
+                    <figure class="tarjeta-trofeo"><img src="img/premier.png" alt="Premier League">
                         <figcaption>
                             <h3>Premier League</h3>
                             <p>3 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/laliga.png" alt="La Liga">
+                    <figure class="tarjeta-trofeo"><img src="img/laliga.png" alt="La Liga">
                         <figcaption>
                             <h3>La Liga</h3>
                             <p>2 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/bota-oro.png" alt="Bota de Oro">
+                    <figure class="tarjeta-trofeo"><img src="img/bota-oro.png" alt="Bota de Oro">
                         <figcaption>
                             <h3>Bota de Oro</h3>
                             <p>4 Trofeos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/serie-a.png" alt="Serie A">
+                    <figure class="tarjeta-trofeo"><img src="img/serie-a.png" alt="Serie A">
                         <figcaption>
                             <h3>Serie A</h3>
                             <p>2 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/the-best.png" alt="The Best">
+                    <figure class="tarjeta-trofeo"><img src="img/the-best.png" alt="The Best">
                         <figcaption>
                             <h3>The Best</h3>
                             <p>2 Trofeos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/mundial-clubes.png" alt="Mundial Clubes">
+                    <figure class="tarjeta-trofeo"><img src="img/mundial-clubes.png" alt="Mundial Clubes">
                         <figcaption>
                             <h3>Mundial de Clubes</h3>
                             <p>4 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/nations-league.png" alt="Nations League">
+                    <figure class="tarjeta-trofeo"><img src="img/nations-league.png" alt="Nations League">
                         <figcaption>
                             <h3>Nations League</h3>
                             <p>1 Título</p>
                         </figcaption>
                     </figure>
 
-                    <figure class="trophy-card"><img src="img/champions.png" alt="Champions League">
+                    <figure class="tarjeta-trofeo"><img src="img/champions.png" alt="Champions League">
                         <figcaption>
                             <h3>Champions League</h3>
                             <p>5 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/balon-oro.png" alt="Balón de Oro">
+                    <figure class="tarjeta-trofeo"><img src="img/balon-oro.png" alt="Balón de Oro">
                         <figcaption>
                             <h3>Balón de Oro</h3>
                             <p>5 Trofeos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/eurocopa.png" alt="Eurocopa">
+                    <figure class="tarjeta-trofeo"><img src="img/eurocopa.png" alt="Eurocopa">
                         <figcaption>
                             <h3>Eurocopa</h3>
                             <p>1 Título</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/premier.png" alt="Premier League">
+                    <figure class="tarjeta-trofeo"><img src="img/premier.png" alt="Premier League">
                         <figcaption>
                             <h3>Premier League</h3>
                             <p>3 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/laliga.png" alt="La Liga">
+                    <figure class="tarjeta-trofeo"><img src="img/laliga.png" alt="La Liga">
                         <figcaption>
                             <h3>La Liga</h3>
                             <p>2 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/bota-oro.png" alt="Bota de Oro">
+                    <figure class="tarjeta-trofeo"><img src="img/bota-oro.png" alt="Bota de Oro">
                         <figcaption>
                             <h3>Bota de Oro</h3>
                             <p>4 Trofeos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/serie-a.png" alt="Serie A">
+                    <figure class="tarjeta-trofeo"><img src="img/serie-a.png" alt="Serie A">
                         <figcaption>
                             <h3>Serie A</h3>
                             <p>2 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/the-best.png" alt="The Best">
+                    <figure class="tarjeta-trofeo"><img src="img/the-best.png" alt="The Best">
                         <figcaption>
                             <h3>The Best</h3>
                             <p>2 Trofeos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/mundial-clubes.png" alt="Mundial Clubes">
+                    <figure class="tarjeta-trofeo"><img src="img/mundial-clubes.png" alt="Mundial Clubes">
                         <figcaption>
                             <h3>Mundial de Clubes</h3>
                             <p>4 Títulos</p>
                         </figcaption>
                     </figure>
-                    <figure class="trophy-card"><img src="img/nations-league.png" alt="Nations League">
+                    <figure class="tarjeta-trofeo"><img src="img/nations-league.png" alt="Nations League">
                         <figcaption>
                             <h3>Nations League</h3>
                             <p>1 Título</p>
@@ -288,12 +275,12 @@
             </div>
         </section>
 
-        <section id="bio-section" class="bio">
-            <div class="main-title">
-                <h1>CRISTIANO</h1>
+        <section id="biografia" class="seccion-oscura">
+            <div class="titulo-principal">
+                <h2 class="titulo-gigante">CRISTIANO</h2>
             </div>
-            <div class="info-container">
-                <article class="info-card">
+            <div class="contenedor-biografia">
+                <article class="tarjeta-info">
                     <h3>El Origen</h3>
                     <p>Cristiano Ronaldo dos Santos Aveiro nació en 1985 en los barrios humildes de Madeira, Portugal.
 
@@ -303,77 +290,78 @@
 
                         billete directo al Manchester United, donde heredó el mítico dorsal 7.</p>
                 </article>
-                <article class="info-card">
+                <article class="tarjeta-info">
                     <h3>Dominio Absoluto</h3>
                     <p>Su etapa en el Real Madrid (2009-2018) redefinió la historia del fútbol: 450 goles en 438
                         partidos. Es el máximo goleador histórico de la Champions League y de la selección portuguesa.
                         Con 5 Balones de Oro y 5 Orejonas en su vitrina, CR7 ha demostrado ser un competidor insaciable,
                         triunfando también en la Juventus y llevando a Portugal a ganar su primera Eurocopa en 2016.</p>
                 </article>
-                <article class="info-card">
+                <article class="tarjeta-info">
                     <h3>El Legado</h3>
                     <p>El legado de CR7 no solo está en sus goles, sino en su ética de trabajo inquebrantable. A sus
                         casi 40 años, sigue compitiendo al máximo nivel en el Al-Nassr, batiendo récords de longevidad.
                         Su marca personal, "CR7", es un imperio global que abarca hoteles, moda y fitness, inspirando a
                         millones de jóvenes a entender que el éxito es el resultado de la perseverancia y el esfuerzo
-
                         diario.</p>
                 </article>
             </div>
         </section>
 
-        <section id="contact-section" class="container">
-            <h2 class="section-title">CONTACTO</h2>
-            <form id="contact-form" class="cr7-form">
-                <div class="input-group">
-                    <label for="name-input">Nombre</label>
-                    <input type="text" id="name-input" placeholder="Tu nombre" required>
+        <section id="contacto" class="contenedor seccion-oscura">
+            <h2 class="titulo-seccion">CONTACTO</h2>
+            <form id="formulario-contacto" class="formulario-contacto">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
                 </div>
-                <div class="input-group">
-                    <label for="email-input">Email</label>
-                    <input type="email" id="email-input" placeholder="tu@email.com" required>
+                <div class="grupo-input">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="tu@email.com" required>
                 </div>
-                <div class="input-group">
-                    <label for="reason-input">Motivo</label>
-                    <select id="reason-input">
+                <div class="grupo-input">
+                    <label for="motivo">Motivo</label>
+                    <select id="motivo">
                         <option value="fan">Mensaje de Fan</option>
                         <option value="business">Negocios</option>
-                        <option value="press">Prensa</option>
                     </select>
                 </div>
-                <div class="input-group">
-                    <p style="color: #cfb103; font-family: 'Oswald';">¿Es tu jugador favorito?</p>
-                    <br>
-                    <label for="si">Sí, es el goat</label>
-                    <input type="radio" id="si" name="fav" value="si">
-                    <label for="no">No, prefiero otro (no se de fútbol)</label>
-                    <input type="radio" id="no" name="fav" value="no">
-                </div>
+                <div class="grupo-input">
+    <p class="pregunta-formulario">¿Es tu jugador favorito?</p>
+    <div class="opciones-radio">
+        <div class="opcion">
+            <input type="radio" id="si" name="fav" value="si">
+            <label for="si">Sí, es el GOAT</label>
+        </div>
+        <div class="opcion">
+            <input type="radio" id="no" name="fav" value="no">
+            <label for="no">No, prefiero otro (no sé de fútbol)</label>
+        </div>
+    </div>
+</div>
 
                 <button type="submit" class="gold-button-siu">ENVIAR</button>
             </form>
         </section>
 
-        <div id="modal-siu" class="modal-overlay">
-            <div class="modal-content">
-                <h2 class="modal-title">¡SIUUU!</h2>
+        <div id="modal-siu" class="capa-modal">
+            <div class="caja-modal">
+                <h2 class="titulo-modal">¡SIUUU!</h2>
                 <p>Tu mensaje ha sido enviado.</p>
-                <button id="close-modal" class="modal-button">Cerrar</button>
+                <button id="cerrar-modal" class="boton-siu-dorado">Cerrar</button>
             </div>
-        </div>
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="pie-pagina">
         <p>&copy; 2026 Alejandro Liebscher Hernández.</p>
-        <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <div class="iconos-sociales">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
         </div>
     </footer>
 
     <script src="javascript/PROYECTO.js"></script>
 </body>
-
 </html>

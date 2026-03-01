@@ -1,54 +1,74 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const formulario = document.getElementById('contact-form');
+    // 1. SELECCIÓN DE ELEMENTOS (Con los nuevos IDs en español)
+    const formulario = document.getElementById('formulario-contacto');
     const modal = document.getElementById('modal-siu');
-    const btnCerrar = document.getElementById('close-modal');
+    const btnCerrarModal = document.getElementById('cerrar-modal');
     
-    const openNewsBtn = document.getElementById('open-news');
-    const closeNewsBtn = document.getElementById('close-news');
-    const sidebar = document.getElementById('news-sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
+    // Elementos de la Barra de Noticias
+    const botonAbrirNoticias = document.getElementById('abrir-noticias');
+    const botonCerrarNoticias = document.getElementById('boton-cerrar-noticias');
+    const barraNoticias = document.getElementById('barra-noticias');
+    const fondoOscuroNoticias = document.getElementById('fondo-oscuro');
 
-    const links = document.querySelectorAll('.nav-menu a');
-    const checkMenu = document.getElementById('menu-toggle');
+    // Elementos de Navegación
+    const enlacesMenu = document.querySelectorAll('.menu-navegacion a');
+    const checkMenuMovil = document.getElementById('menu-toggle');
 
+    // 2. LÓGICA DEL FORMULARIO Y MODAL
     if (formulario) {
         formulario.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (modal) modal.style.display = 'flex';
-            formulario.reset();
+            e.preventDefault(); // Evita que la página se recargue
+            if (modal) {
+                modal.style.display = 'flex'; // Muestra el mensaje de ¡SIUUU!
+            }
+            formulario.reset(); // Limpia los campos
         });
     }
 
-    if (btnCerrar) {
-        btnCerrar.addEventListener('click', () => {
+    // Cerrar modal al hacer clic en el botón
+    if (btnCerrarModal) {
+        btnCerrarModal.addEventListener('click', () => {
             if (modal) modal.style.display = 'none';
         });
     }
 
+    // Cerrar modal si se hace clic fuera de la caja blanca
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
 
-    if (openNewsBtn && sidebar) {
-        openNewsBtn.addEventListener('click', () => {
-            sidebar.classList.add('active');
-            overlay.classList.add('active');
+    // 3. LÓGICA DE LA BARRA LATERAL (NOTICIAS)
+    if (botonAbrirNoticias && barraNoticias) {
+        // Abrir
+        botonAbrirNoticias.addEventListener('click', () => {
+            barraNoticias.classList.add('activa');
+            fondoOscuroNoticias.classList.add('activa');
         });
 
-        const closeSidebar = () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
+        // Función para cerrar
+        const cerrarBarraNoticias = () => {
+            barraNoticias.classList.remove('activa');
+            fondoOscuroNoticias.classList.remove('activa');
         };
 
-        closeNewsBtn.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
+        // Cerrar con el botón X o haciendo clic en el fondo oscuro
+        if (botonCerrarNoticias) {
+            botonCerrarNoticias.addEventListener('click', cerrarBarraNoticias);
+        }
+        if (fondoOscuroNoticias) {
+            fondoOscuroNoticias.addEventListener('click', cerrarBarraNoticias);
+        }
     }
 
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            if (checkMenu) checkMenu.checked = false;
+    // 4. LÓGICA DE NAVEGACIÓN (Menú móvil)
+    // Esto hace que al hacer clic en un enlace de la sección, el menú se cierre solo
+    enlacesMenu.forEach(enlace => {
+        enlace.addEventListener('click', () => {
+            if (checkMenuMovil) {
+                checkMenuMovil.checked = false;
+            }
         });
     });
 });

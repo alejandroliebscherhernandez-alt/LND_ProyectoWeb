@@ -13,49 +13,87 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #111;
     color: white;
-    overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-.modal-title,
-.gold-button-siu,
-.input-group label {
+h1, h2, h3, .titulo-modal, .boton-siu-dorado, .grupo-input label {
     font-family: 'Oswald', sans-serif;
 }
 
-.container {
-    padding: 80px 10%;
-    position: relative;
+.pregunta-formulario {
+    color: #cfb103;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
-.section-title {
+.opciones-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.opcion input[type="radio"] {
+    appearance: none; 
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cfb103;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+}
+
+.opcion input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #cfb103;
+    border-radius: 50%;
+}
+
+.opcion label {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.opcion:hover label {
+    color: #cfb103;
+}
+
+.contenedor {
+    padding: 80px 10%;
+}
+
+.titulo-seccion {
     font-size: 2.5rem;
     border-left: 5px solid #cfb103;
     padding-left: 15px;
     margin-bottom: 30px;
 }
 
-.container,
-#career-section,
-#stats-section,
-#bio-section,
-#contact-section,
-.animated-gallery {
+.seccion-oscura {
     background-color: #111;
     position: relative;
     z-index: 1;
 }
 
-.bio {
-    background-color: #111;
-    position: relative;
-    z-index: 1;
-}
-
-/* 2. HEADER Y NAVBAR */
-.navbar {
+/* 2. BARRA DE NAVEGACIÓN */
+.barra-navegacion {
     background-color: #cfb103;
     padding: 10px 5%;
     display: flex;
@@ -66,34 +104,33 @@ h3,
     z-index: 1000;
 }
 
-.logo-img {
+.imagen-logo {
     width: 50px;
 }
 
-.menu-toggle,
-.menu-icon {
+.toggle-menu, .icono-menu {
     display: none;
 }
 
-.nav-menu {
+.menu-navegacion {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
-.nav-menu a {
+.menu-navegacion a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     transition: 0.3s;
 }
 
-.nav-menu a:hover {
+.menu-navegacion a:hover {
     color: white;
 }
 
-/* 3. SECCIÓN HERO (VIDEO INICIAL) */
-.hero {
+/* 3. SECCIÓN DE INICIO (VIDEO) */
+.inicio-video {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -101,7 +138,7 @@ h3,
     text-align: center;
 }
 
-.video-container {
+.contenedor-video-fondo {
     position: fixed;
     top: 0;
     left: 0;
@@ -110,19 +147,19 @@ h3,
     z-index: -1;
 }
 
-.video-container video {
+.contenedor-video-fondo video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.hero-overlay h1 {
+.capa-texto-inicio h1 {
     font-size: 5rem;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* --- ESTILO DEL SIDEBAR DE NOTICIAS --- */
-.news-button {
+/* --- BARRA LATERAL DE NOTICIAS --- */
+.boton-noticias {
     background: transparent;
     color: black;
     border: none;
@@ -134,16 +171,15 @@ h3,
     transition: 0.3s;
 }
 
-.news-button:hover {
+.boton-noticias:hover {
     color: #fff;
     transform: scale(1.1);
 }
 
-.sidebar {
+.barra-lateral {
     position: fixed;
     top: 0;
     right: -400px;
-    left: auto;
     width: 350px;
     height: 100%;
     background: #111;
@@ -154,11 +190,12 @@ h3,
     flex-direction: column;
     border-left: 2px solid #cfb103;
 }
-.sidebar.active {
+
+.barra-lateral.activa {
     right: 0;
 }
 
-.sidebar-header {
+.cabecera-lateral {
     background: #cfb103;
     padding: 20px;
     display: flex;
@@ -167,14 +204,14 @@ h3,
     color: #000;
 }
 
-.close-btn {
+.boton-cerrar {
     background: none;
     border: none;
     font-size: 2.5rem;
     cursor: pointer;
 }
 
-.sidebar-overlay {
+.fondo-oscuro-lateral {
     position: fixed;
     top: 0;
     left: 0;
@@ -186,12 +223,12 @@ h3,
     z-index: 10000;
 }
 
-.sidebar-overlay.active {
+.fondo-oscuro-lateral.activa {
     display: block;
 }
 
-/* 4. SECCIÓN TRAYECTORIA */
-.stage {
+/* 4. TRAYECTORIA */
+.etapa-carrera {
     background: #222;
     padding: 25px;
     border-radius: 8px;
@@ -199,48 +236,37 @@ h3,
     border-bottom: 4px solid #cfb103;
 }
 
-.oro {
-    color: #cfb103;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* 5. SECCIÓN ESTADÍSTICAS */
-.table-wrapper {
+/* 5. ESTADÍSTICAS */
+.envoltorio-tabla {
     width: 100%;
     overflow-x: auto;
 }
 
-.stats-table {
+.tabla-stats {
     width: 100%;
     border-collapse: collapse;
     background: #1a1a1a;
     border-bottom: 4px solid #cfb103;
 }
 
-.stats-table th,
-.stats-table td {
+.tabla-stats th, .tabla-stats td {
     padding: 15px;
     border: 1px solid #333;
     text-align: left;
 }
 
-.stats-table th {
+.tabla-stats th {
     background-color: #cfb103;
     color: black;
 }
 
-.stats-table tfoot td {
+.tabla-stats tfoot td {
     background-color: #333;
     color: #cfb103;
 }
 
-/* 6. SECCIÓN PALMARÉS (GALERÍA ANIMADA) */
-.header-centered {
-    text-align: center;
-}
-
-.video-inner-wrapper {
+/* 6. GALERÍA ANIMADA */
+.contenedor-video-trofeos {
     max-width: 1000px;
     border: 3px solid #cfb103;
     border-radius: 15px;
@@ -248,34 +274,29 @@ h3,
     margin: 0 auto;
 }
 
-.video-trophies {
+.video-trofeos {
     width: 100%;
     display: block;
 }
 
-.slider-container {
+.carrusel-contenedor {
     width: 100%;
     overflow: hidden;
     padding: 40px 0;
 }
 
-.slider-track {
+.pista-carrusel {
     display: flex;
     width: max-content;
-    animation: scroll-infinito 20s linear infinite;
+    animation: desplazamiento-infinito 20s linear infinite;
 }
 
-@keyframes scroll-infinito {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+@keyframes desplazamiento-infinito {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-.trophy-card {
+.tarjeta-trofeo {
     width: 280px;
     margin: 0 10px;
     background: #1a1a1a;
@@ -287,33 +308,26 @@ h3,
     cursor: pointer;
 }
 
-.trophy-card:hover {
+.tarjeta-trofeo:hover {
     transform: translateY(-15px);
     box-shadow: 0 15px 30px rgba(207, 177, 3, 0.4);
-    background: #222;
 }
 
-.trophy-card img {
+.tarjeta-trofeo img {
     width: 100%;
     height: 120px;
     object-fit: contain;
     margin-bottom: 15px;
-    transition: 0.3s;
 }
 
-.trophy-card:hover img {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px #cfb103);
-}
-
-/* 7. SECCIÓN BIO */
-.main-title h1 {
+/* 7. BIO */
+.titulo-gigante {
     font-size: 15vw;
     text-align: center;
     line-height: 1;
 }
 
-.info-container {
+.contenedor-biografia {
     display: flex;
     gap: 2rem;
     padding: 50px 10%;
@@ -321,7 +335,7 @@ h3,
     flex-wrap: wrap;
 }
 
-.info-card {
+.tarjeta-info {
     flex: 1;
     min-width: 300px;
     background: #1a1a1a;
@@ -330,8 +344,8 @@ h3,
     border-bottom: 4px solid #cfb103;
 }
 
-/* 8. SECCIÓN CONTACTO */
-.cr7-form {
+/* 8. CONTACTO */
+.formulario-contacto {
     max-width: 600px;
     margin: 0 auto;
     background: #1a1a1a;
@@ -340,18 +354,17 @@ h3,
     border-bottom: 4px solid #cfb103;
 }
 
-.input-group {
+.grupo-input {
     margin-bottom: 20px;
 }
 
-.input-group label {
+.grupo-input label {
     display: block;
     color: #cfb103;
     margin-bottom: 5px;
 }
 
-.input-group input:not([type="radio"]),
-.input-group select {
+.grupo-input input:not([type="radio"]), .grupo-input select {
     width: 100%;
     padding: 12px;
     background: #000;
@@ -359,7 +372,7 @@ h3,
     color: white;
 }
 
-.gold-button-siu {
+.boton-siu-dorado {
     width: 100%;
     padding: 15px;
     background: #cfb103;
@@ -371,12 +384,12 @@ h3,
     transition: 0.3s;
 }
 
-.gold-button-siu:hover {
+.boton-siu-dorado:hover {
     background: #ffd700;
 }
 
 /* 9. MODAL */
-.modal-overlay {
+.capa-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -389,7 +402,7 @@ h3,
     align-items: center;
 }
 
-.modal-content {
+.caja-modal {
     background: #222;
     padding: 40px;
     border: 2px solid #cfb103;
@@ -398,78 +411,39 @@ h3,
 }
 
 /* 10. FOOTER */
-.footer {
+.pie-pagina {
     background: #000;
     padding: 40px 5%;
     text-align: center;
     border-top: 1px solid #333;
 }
 
-.social-links {
+.iconos-sociales {
     margin: 15px 0;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.social-links a {
+.iconos-sociales a {
     color: #cfb103;
     font-size: 1.5rem;
     transition: 0.3s;
 }
 
-.social-links a:hover {
-    transform: scale(1.2);
-}
-
-/* 11. MEDIA QUERIES (3 TAMAÑOS) - OPTIMIZADO */
-
-/* TABLETS (1024px) */
+/* 11. MEDIA QUERIES */
 @media (max-width: 1024px) {
-    .info-card {
-        width: 45%;
-    }
-
-    .main-title h1 {
-        font-size: 6rem;
-    }
+    .tarjeta-info { width: 45%; }
 }
 
-/* MÓVILES GRANDES (768px) */
 @media (max-width: 768px) {
-    .container {
-        padding: 60px 5%;
-    }
-
-    .hero-overlay h1 {
-        font-size: 3.5rem;
-    }
-
-    .nav-menu {
-        gap: 10px;
-    }
-
-    .stats-table {
-        font-size: 0.85rem;
-    }
+    .contenedor { padding: 60px 5%; }
+    .capa-texto-inicio h1 { font-size: 3.5rem; }
 }
 
-/* MÓVILES PEQUEÑOS (480px) */
 @media (max-width: 480px) {
-    .menu-icon {
-        display: block;
-        color: black;
-        cursor: pointer;
-    }
-    .news-button {
-        color: black;
-        padding: 15px 0;
-        justify-content: center;
-        width: 100%;
-        display: flex;
-}
-
-    .nav-menu {
+    .icono-menu { display: block; color: black; cursor: pointer; }
+    .menu-navegacion {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -479,29 +453,7 @@ h3,
         background-color: #cfb103;
         padding: 20px;
     }
-
-    #menu-toggle:checked~.nav-menu {
-        display: flex;
-    }
-
-    .hero-overlay h1 {
-        font-size: 2.2rem;
-    }
-
-    .info-card {
-        min-width: 100%;
-    }
-
-    .cr7-form {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .container {
-        padding: 40px 15px;
-    }
-
-    .main-title h1 {
-        font-size: 15vw;
-    }
+    #menu-toggle:checked ~ .menu-navegacion { display: flex; }
+    .capa-texto-inicio h1 { font-size: 2.2rem; }
+    .tarjeta-info { min-width: 100%; }
 }
